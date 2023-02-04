@@ -1,0 +1,274 @@
+@use 'helpers/reset';
+@use 'helpers/mixins' as *;
+
+.app-quiz {
+    width: min(800px, 90%);
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: .5em;
+    background-color: var(--clr-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.start-quiz_container {
+    position: absolute;
+    inset: 0;
+    background-color: inherit;
+    z-index: 1;
+    @include gridOption(grid, center);
+
+    .start-quiz {
+        width: min(300px, 90%);
+        display: grid;
+        gap: 1em;
+    }
+
+    .select-category {
+        position: 0;
+        position: relative;
+        height: 71px;
+
+        select[name="category"] {
+            width: 100%;
+            height: 100%;
+            padding-left: 1em;
+            appearance: none;
+            border: 0;
+            background-color: var(--clr-blue);
+            color: var(--clr-white);
+            cursor: pointer;
+            box-shadow: none;
+            background-image: none;
+            outline: none;
+            transition: 300ms ease-in-out;
+
+            &:focus {
+                box-shadow:
+                    0 0 0 2px var(--clr-bg),
+                    0 0 0 4px var(--clr-darkBlue);
+            }
+
+            font: {
+                weight: bold;
+                size: large;
+            }
+        }
+
+        span {
+            position: absolute;
+            right: 0;
+            width: 71px;
+            height: 100%;
+            background-color: var(--clr-darkBlue);
+            pointer-events: none;
+
+            &::before {
+                content: url("./assets/icons/arrow.svg");
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%)
+            }
+        }
+    }
+
+    :is(.button-start, .button-download) {
+        @include buttonCustom();
+    }
+}
+
+%containerStyle {
+    background-color: var(--clr-white);
+    border-radius: .5em;
+    padding: inherit;
+    box-shadow: 0 0 10px var(--clr-bullets);
+}
+
+header {
+    @include flexOption(flex, space-between, 0);
+    color: var(--clr-heading);
+    @extend %containerStyle;
+
+    .category {
+        @include flexOption(flex, none, 4px);
+        align-items: center;
+        position: relative;
+
+        strong {
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            padding: 5px 10px;
+            background:
+                linear-gradient(to left, #ddd, #eee);
+            position: absolute;
+            left: 75px;
+
+            img {
+                position: relative;
+                top: -2px;
+            }
+        }
+    }
+}
+
+.quiz-area {
+    margin-block: 1.5em;
+    @extend %containerStyle;
+
+    .quiz-question {
+        color: var(--clr-heading);
+        margin-bottom: 1em;
+
+        h1 {
+            font-size: clamp(16px, 2vw, 24px);
+        }
+    }
+
+    .answers-area {
+        background-color: var(--clr-bg);
+        border: 1px solid var(--clr-border);
+
+        .answer {
+            padding: 1em;
+        }
+
+        .answer:not(:last-child) {
+            border-bottom: 1px solid var(--clr-border);
+        }
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    label {
+        @include flexOption(flex, none, .5em);
+        align-items: center;
+        width: fit-content;
+        cursor: pointer;
+        transition: 500ms ease-in;
+
+        span {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--clr-blue);
+            display: block;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                inset: 50% 0 0 50%;
+                transform:
+                    translate(-50%, -50%) scale(0);
+                border-radius: inherit;
+                background-color: var(--clr-blue);
+                transition: 300ms ease;
+            }
+        }
+    }
+
+    [type='radio']:checked+label span::before {
+        transform:
+            translate(-50%, -50%) scale(1);
+    }
+
+    [type='radio']:checked+label {
+        color: var(--clr-blue);
+    }
+}
+
+.submit-button {
+    @include buttonCustom();
+}
+
+footer {
+    @include flexOption(flex, space-between, 0);
+    align-items: center;
+    margin-top: 1em;
+    @extend %containerStyle;
+    color: var(--clr-heading);
+
+    .bullets {
+        @include flexOption(flex, none, .5em);
+
+        .bullet {
+            display: block;
+            width: 25px;
+            height: 25px;
+            background-color: var(--clr-bullets);
+            border-radius: 50%;
+
+            &.on {
+                background-color: var(--clr-blue);
+            }
+        }
+    }
+
+    .counterdown-container {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+        border: 5px solid var(--clr-blue);
+        transition: 500ms all ease-in-out;
+
+        &.animate {
+            animation: counterDownAnimate 500ms ease-in-out forwards;
+            transform: scale(1.2)
+        }
+
+        @keyframes counterDownAnimate {
+            to {
+                transform: scale(1)
+            }
+        }
+
+        .counterdown {
+            @include gridOption(grid, center);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 45px;
+            height: 45px;
+            border-radius: inherit;
+            font-weight: bold;
+        }
+    }
+}
+
+.results {
+    @include gridOption(grid, center);
+    @extend %containerStyle;
+    margin-top: 1.5em;
+    height: 455.4px;
+    text-align: center;
+
+    .button-reload {
+        @include buttonCustom();
+        padding: 0;
+        height: 55px;
+        @include flexOption(flex, center, .5em);
+        align-items: center;
+    }
+
+    $recentResults: (
+        'bad': var(--clr-red),
+        'good': var(--clr-green),
+        'perfect':var(--clr-blue)
+    );
+
+@each $results,
+$color in $recentResults {
+    ##{$results} {
+        color: $color;
+        font-size: x-large;
+    }
+}
+}

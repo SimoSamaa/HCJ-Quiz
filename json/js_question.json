@@ -1,0 +1,74 @@
+[
+    {
+        "title": "How I Can Link JS File in HTML Head",
+        "answer_1": "By Using type Attribute",
+        "answer_2": "By Using defer Attribute",
+        "answer_3": "By Using rel Attribute",
+        "answer_4": "All Answers Is Right",
+        "right_answer": "By Using defer Attribute"
+    },
+    {
+        "title": "How I Can Select Elements HTML in JS",
+        "answer_1": "document.querySelector()",
+        "answer_2": "document.getElementById()",
+        "answer_3": "document.getElementsByClassName()",
+        "answer_4": "All Answers Is Right",
+        "right_answer": "All Answers Is Right"
+    },
+    {
+        "title": "What Are JS Data Types",
+        "answer_1": "null",
+        "answer_2": "integer",
+        "answer_3": "double",
+        "answer_4": "Undefined",
+        "right_answer": "Undefined"
+    },
+    {
+        "title": "What Are The Type of Pop Up Box Available",
+        "answer_1": "pop()",
+        "answer_2": "Prompt()",
+        "answer_3": "closest()",
+        "answer_4": "none",
+        "right_answer": "Prompt()"
+    },
+    {
+        "title": "Right Method To Create Variable",
+        "answer_1": "let",
+        "answer_2": "var",
+        "answer_3": "const",
+        "answer_4": "All Answers Is Right",
+        "right_answer": "All Answers Is Right"
+    },
+    {
+        "title": "How I Can Remove Space In String",
+        "answer_1": "charAt()",
+        "answer_2": "slice()",
+        "answer_3": "trim()",
+        "answer_4": "split()",
+        "right_answer": "trim()"
+    },
+    {
+        "title": "How Many Methods Are To Write a Function",
+        "answer_1": "One Method",
+        "answer_2": "Two Methods",
+        "answer_3": "Three Methods",
+        "answer_4": "All Answers Is Right Without Last Answer",
+        "right_answer": "All Answers Is Right Without Last Answer"
+    },
+    {
+        "title": "Any of The  Frameworks Use in BackEnd",
+        "answer_1": "Angular.",
+        "answer_2": "React",
+        "answer_3": "Vue.js.",
+        "answer_4": "Node.js",
+        "right_answer": "Node.js"
+    },
+    {
+        "title": "What I Use to Get Data From JSON File to JS",
+        "answer_1": "then()",
+        "answer_2": "fetch()",
+        "answer_3": "catch()",
+        "answer_4": "finally()",
+        "right_answer": "fetch()"
+    }
+]

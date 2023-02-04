@@ -1,0 +1,47 @@
+@use './colors' as *;
+
+@mixin mainColorsApp() {
+
+    @each $color,
+    $value in $colors {
+        --clr-#{$color}: #{$value};
+    }
+}
+
+@mixin flexOption($flex, $spBet, $gap) {
+    display: $flex;
+    justify-content: $spBet;
+    gap: $gap;
+}
+
+@mixin gridOption($grid, $cen) {
+    display: $grid;
+    place-items: $cen;
+}
+
+@mixin buttonCustom() {
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    padding: 1.5em 1em;
+    color: var(--clr-white);
+    font-weight: bold;
+    border-radius: .5em;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    outline: transparent;
+    transition: 300ms ease all;
+    border-bottom: 5px solid var(--clr-darkBlue);
+    background-color: var(--clr-blue);
+
+
+    &:is(:hover, :focus) {
+        background-color: rgb(74, 74, 240);
+    }
+
+    &:active {
+        transform: scale(0.9);
+        border-width: 0;
+    }
+}

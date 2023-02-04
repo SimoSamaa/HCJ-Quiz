@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quis-App</title>
+    <link rel="icon" href="./assets/logo/logo.png">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main_script.js"></script>
+</head>
+
+<body>
+    <main class="app-quiz">
+        <div class="start-quiz_container">
+            <div class="start-quiz">
+                <div class="select-category">
+                    <select name="category">
+                        <option value="HTML" selected>HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JS">JS</option>
+                    </select>
+                    <span></span>
+                </div>
+
+                <button class="button-start">START QUIZ</button>
+                <button class="button-download">DOWNLOAD APP</button>
+            </div>
+        </div>
+
+        <header>
+            <div class="category">Category: <strong></strong></div>
+            <div class="questions-count">Questions Count: <span></span></div>
+        </header>
+
+        <section class="quiz-area">
+            <div class="quiz-question"></div>
+            <div class="answers-area"></div>
+        </section>
+
+        <button class="submit-button">Submit Answers</button>
+
+        <footer>
+            <div class="bullets"></div>
+            <div class="counterdown-container">
+                <div class="counterdown"></div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

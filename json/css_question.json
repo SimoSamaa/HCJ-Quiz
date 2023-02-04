@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Why We Use display none Property",
+        "answer_1": "To Center Element",
+        "answer_2": "To Remove Element",
+        "answer_3": "To Hide Element",
+        "answer_4": "To Show Element",
+        "right_answer": "To Hide Element"
+    },
+    {
+        "title": "Name some CSS frameworks",
+        "answer_1": "Bootstrap",
+        "answer_2": "Gumby",
+        "answer_3": "Semantic",
+        "answer_4": "All Answers Is Right",
+        "right_answer": "All Answers Is Right"
+    },
+    {
+        "title": "Before And After Can Use to",
+        "answer_1": "To Style Elements",
+        "answer_2": "To Make Elements with CSS",
+        "answer_3": "To Add a New Style",
+        "answer_4": "To Make a Space Between Element",
+        "right_answer": "To Make Elements with CSS"
+    },
+    {
+        "title": "Any Unit I can Use in CSS",
+        "answer_1": "vh",
+        "answer_2": "dvh",
+        "answer_3": "px",
+        "answer_4": "All Answers Is Right",
+        "right_answer": "All Answers Is Right"
+    },
+    {
+        "title": "How I can Control Elements Response  Dynamically",
+        "answer_1": "Using min()",
+        "answer_2": "Using clamp()",
+        "answer_3": "Using minmax()",
+        "answer_4": "All Answers Is Right Without clamp()",
+        "right_answer": "Using clamp()"
+    },
+    {
+        "title": "What Is The Diferent Between class And id",
+        "answer_1": "There Is No Difference Between Them",
+        "answer_2": "class Can Assigned  More Than Element",
+        "answer_3": "id Can Assigned One Element",
+        "answer_4": "All Answers Is Right Without Firt Answer",
+        "right_answer": "All Answers Is Right Without Firt Answer"
+    },
+    {
+        "title": "Why We Use aspect-ration Property",
+        "answer_1": "To Define Width",
+        "answer_2": "To Define Height",
+        "answer_3": "Create Boxes That Maintain Proportional Dimensions",
+        "answer_4": "To Control Width And Height",
+        "right_answer": "Create Boxes That Maintain Proportional Dimensions"
+    },
+    {
+        "title": "What Does He Accept flex Property",
+        "answer_1": "flex-grow",
+        "answer_2": "flex-shrink",
+        "answer_3": "flex-basis",
+        "answer_4": "All Answers Is Right",
+        "right_answer": "All Answers Is Right"
+    },
+    {
+        "title": "How Can CSS be Integrated Into an HTML Page",
+        "answer_1": "Using The Style Attribute in Element",
+        "answer_2": "Using Style Tags In The Body Section",
+        "answer_3": "Using Style Tags In The Head Section",
+        "answer_4": "All Answers Is Right",
+        "right_answer": "All Answers Is Right"
+    }
+]

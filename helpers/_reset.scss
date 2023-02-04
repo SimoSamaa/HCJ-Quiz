@@ -1,0 +1,23 @@
+@use './mixins' as *;
+
+html :is(*::before, *::after, *) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root {
+    @include mainColorsApp();
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: sans-serif;
+    color: var(--clr-text);
+    padding-block: 2em;
+    background-color: var(--clr-blue);
+    font-size: clamp(14px, 2vw, 16px);
+    @include gridOption(grid, center)
+}
