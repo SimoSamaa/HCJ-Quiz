@@ -7,7 +7,8 @@ const startQuizContainer = document.querySelector(".start-quiz_container"),
     answersArea = document.querySelector(".answers-area"),
     submitButton = document.querySelector(".submit-button"),
     bulletsContainer = document.querySelector(".bullets"),
-    counterdowncontainer = document.querySelector(".counterdown-container");
+    counterdowncontainer = document.querySelector(".counterdown-container"),
+    buttonDownload = document.querySelector(".button-download");
 
 let = currentIndex = 0;
 let = rightAnswers = 0;
@@ -16,6 +17,7 @@ let = counterDownIntervale = null;
 buttonStart.addEventListener("click", () => {
     startQuizContainer.remove();
     counterDown(20);
+    clearInterval(counterDownIntervale)
 });
 
 // startQuizContainer.style.display = "none"
@@ -57,8 +59,6 @@ function getDataFromJson(link) {
             createBullets(ObjCount);
 
             loopFromDumyData(dataObj[currentIndex], ObjCount);
-
-            // counterDown(20);
 
             submitButton.onclick = () => {
 
@@ -187,6 +187,7 @@ function showResults(count) {
         answersArea.closest(".quiz-area").remove();
         bulletsContainer.closest("footer").remove();
         submitButton.remove();
+        // clearInterval(counterDownIntervale);
 
         document.querySelector(".app-quiz").appendChild(results);
 
@@ -198,19 +199,19 @@ function showResults(count) {
             results.children[0].firstElementChild.innerHTML = `
             <strong id='good'>Good</strong>, ${rightAnswers} From ${count} is Good
             <br>
-            <img style='margin-block:1em;' alt='good' src ='/assets/icons/emoji-good.svg'>
+            <img style='margin-block:1em;' alt='good' src ='./assets/icons/emoji-good.svg'>
         `;
         } else if (rightAnswers === count) {
             results.children[0].firstElementChild.innerHTML = `
                 <strong id='perfect'>Perfect</strong>, ${rightAnswers} From ${count}  All Anssers is Good
                 <br>
-                <img style='margin-block:1em;' alt='perfect' src ='/assets/icons/emoji-perfect.svg'>
+                <img style='margin-block:1em;' alt='perfect' src ='./assets/icons/emoji-perfect.svg'>
             `;
         } else {
             results.children[0].firstElementChild.innerHTML = `
                 <strong id='bad'>Bad</strong>, ${rightAnswers} From ${count}
                 <br>
-                <img style='margin-block:1em;' alt='bad' src ='/assets/icons/emoji-bad.svg'>
+                <img style='margin-block:1em;' alt='bad' src ='./assets/icons/emoji-bad.svg'>
             `;
         }
     }
@@ -261,3 +262,10 @@ function counterDown(duration) {
 
     }, 1000);
 };
+
+buttonDownload.addEventListener("click", () => {
+    let downloadLink = document.createElement("a");
+    downloadLink.href = './assets/logo/logo.png';
+    downloadLink.download = 'HCJ-Quiz';
+    downloadLink.click();
+});
