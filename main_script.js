@@ -199,19 +199,19 @@ function showResults(count) {
             results.children[0].firstElementChild.innerHTML = `
             <strong id='good'>Good</strong>, ${rightAnswers} From ${count} is Good
             <br>
-            <img style='margin-block:1em;' alt='good' src ='./assets/icons/emoji-good.svg'>
+            <img style='margin-block:1em;' alt='good' src ='../assets/icons/emoji-good.svg'>
         `;
         } else if (rightAnswers === count) {
             results.children[0].firstElementChild.innerHTML = `
                 <strong id='perfect'>Perfect</strong>, ${rightAnswers} From ${count}  All Anssers is Good
                 <br>
-                <img style='margin-block:1em;' alt='perfect' src ='./assets/icons/emoji-perfect.svg'>
+                <img style='margin-block:1em;' alt='perfect' src ='../assets/icons/emoji-perfect.svg'>
             `;
         } else {
             results.children[0].firstElementChild.innerHTML = `
                 <strong id='bad'>Bad</strong>, ${rightAnswers} From ${count}
                 <br>
-                <img style='margin-block:1em;' alt='bad' src ='./assets/icons/emoji-bad.svg'>
+                <img style='margin-block:1em;' alt='bad' src ='../assets/icons/emoji-bad.svg'>
             `;
         }
     }
