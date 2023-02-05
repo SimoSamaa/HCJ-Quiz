@@ -19,6 +19,7 @@ buttonStart.addEventListener("click", () => {
     counterDown(20);
 });
 
+// test
 // startQuizContainer.style.display = "none"
 // select category default value
 category.innerHTML = `${selectCategory.value} <img src='./assets/icons/html.svg'>`
