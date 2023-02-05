@@ -45,3 +45,11 @@
         border-width: 0;
     }
 }
+
+@mixin breakPoint($res) {
+    @if $res ==mobile {
+        @media (max-width:500px) {
+            @content;
+        }
+    }
+}

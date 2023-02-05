@@ -9,6 +9,10 @@
     background-color: var(--clr-bg);
     position: relative;
     overflow: hidden;
+
+    @include breakPoint(mobile) {
+        height: 100%;
+    }
 }
 
 .start-quiz_container {
@@ -90,6 +94,7 @@ header {
     color: var(--clr-heading);
     @extend %containerStyle;
 
+
     .category {
         @include flexOption(flex, none, 4px);
         align-items: center;
@@ -104,6 +109,10 @@ header {
                 linear-gradient(to left, #ddd, #eee);
             position: absolute;
             left: 75px;
+
+            @include breakPoint(mobile) {
+                left: 65px;
+            }
 
             img {
                 position: relative;
@@ -194,13 +203,21 @@ footer {
     @extend %containerStyle;
     color: var(--clr-heading);
 
+    @include breakPoint(mobile) {
+        position: absolute;
+        bottom: 1em;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 2em);
+    }
+
     .bullets {
         @include flexOption(flex, none, .5em);
 
         .bullet {
             display: block;
-            width: 25px;
-            height: 25px;
+            width: clamp(15px, 2vw, 25px);
+            height: clamp(15px, 2vw, 25px);
             background-color: var(--clr-bullets);
             border-radius: 50%;
 
@@ -217,6 +234,13 @@ footer {
         position: relative;
         border: 5px solid var(--clr-blue);
         transition: 500ms all ease-in-out;
+
+        @include breakPoint(mobile) {
+            width: 40px;
+            height: 40px;
+            border-width: 3px;
+            font-size: 10px;
+        }
 
         &.animate {
             animation: counterDownAnimate 500ms ease-in-out forwards;
@@ -235,10 +259,11 @@ footer {
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 45px;
-            height: 45px;
+            width: 90%;
+            height: 90%;
             border-radius: inherit;
             font-weight: bold;
+            // background-color: red
         }
     }
 }

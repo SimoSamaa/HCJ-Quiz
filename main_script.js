@@ -19,7 +19,7 @@ buttonStart.addEventListener("click", () => {
     counterDown(20);
 });
 
-// startQuizContainer.style.display = "none"
+startQuizContainer.style.display = "none"
 // select category default value
 category.innerHTML = `${selectCategory.value} <img src='./assets/icons/html.svg'>`
 selectCategory.addEventListener("change", () => {
@@ -186,7 +186,6 @@ function showResults(count) {
         answersArea.closest(".quiz-area").remove();
         bulletsContainer.closest("footer").remove();
         submitButton.remove();
-        // clearInterval(counterDownIntervale);
 
         document.querySelector(".app-quiz").appendChild(results);
 
@@ -198,19 +197,19 @@ function showResults(count) {
             results.children[0].firstElementChild.innerHTML = `
             <strong id='good'>Good</strong>, ${rightAnswers} From ${count} is Good
             <br>
-            <img style='margin-block:1em;' alt='good' src ='./assets/icons/emoji-good.svg'>
+            <img style='margin-block:1em;' alt='good' src ='assets/icons/emoji-good.svg'>
         `;
         } else if (rightAnswers === count) {
             results.children[0].firstElementChild.innerHTML = `
                 <strong id='perfect'>Perfect</strong>, ${rightAnswers} From ${count}  All Anssers is Good
                 <br>
-                <img style='margin-block:1em;' alt='perfect' src ='./assets/icons/emoji-perfect.svg'>
+                <img style='margin-block:1em;' alt='perfect' src ='assets/icons/emoji-perfect.svg'>
             `;
         } else {
             results.children[0].firstElementChild.innerHTML = `
                 <strong id='bad'>Bad</strong>, ${rightAnswers} From ${count}
                 <br>
-                <img style='margin-block:1em;' alt='bad' src ='./assets/icons/emoji-bad.svg'>
+                <img style='margin-block:1em;' alt='bad' src ='assets/icons/emoji-bad.svg'>
             `;
         }
     }
@@ -232,7 +231,7 @@ function counterDown(duration) {
         counterdown.textContent = `${minuts}:${seconds}`
 
         if (duration == 15) {
-            console.log("15");
+            // console.log("15");
             counterdowncontainer.style.borderTopColor = "var(--clr-green)";
             counterdowncontainer.classList.add('animate');
 
@@ -241,12 +240,12 @@ function counterDown(duration) {
             });
 
         } else if (duration == 10) {
-            console.log("10");
+            // console.log("10");
             counterdowncontainer.style.borderRightColor = "var(--clr-green)";
             counterdowncontainer.classList.add('animate');
 
         } else if (duration == 5) {
-            console.log("5");
+            // console.log("5");
             counterdowncontainer.style.borderBottomColor = "var(--clr-green)";
             counterdowncontainer.classList.add('animate');
 
@@ -268,3 +267,19 @@ buttonDownload.addEventListener("click", () => {
     downloadLink.download = 'HCJ-Quiz';
     downloadLink.click();
 });
+
+const mediaQuery = window.matchMedia("(max-width:500px)");
+
+function handleMediaQuery(e) {
+    const test = e.matches;
+    console.log(test);
+
+    if (test === true) {
+        category.firstChild.textContent = "";
+    } else {
+        category.firstChild.textContent = "HTML";
+    }
+};
+
+handleMediaQuery(mediaQuery);
+mediaQuery.addListener(handleMediaQuery);

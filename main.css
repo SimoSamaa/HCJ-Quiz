@@ -35,6 +35,11 @@ body {
   place-items: center;
 }
 
+@media (max-width: 350px) {
+  body {
+    width: 350px;
+  }
+}
 .app-quiz {
   width: min(800px, 90%);
   margin: 0 auto;
@@ -43,6 +48,11 @@ body {
   background-color: var(--clr-bg);
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 500px) {
+  .app-quiz {
+    height: 100%;
+  }
 }
 
 .start-quiz_container {
@@ -176,6 +186,11 @@ header .category strong {
   position: absolute;
   left: 75px;
 }
+@media (max-width: 500px) {
+  header .category strong {
+    left: 65px;
+  }
+}
 header .category strong img {
   position: relative;
   top: -2px;
@@ -291,6 +306,16 @@ footer {
   margin-top: 1em;
   color: var(--clr-heading);
 }
+@media (max-width: 500px) {
+  footer {
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: calc(100% - 2em);
+  }
+}
 footer .bullets {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,8 +327,8 @@ footer .bullets {
 }
 footer .bullets .bullet {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: clamp(15px, 2vw, 25px);
+  height: clamp(15px, 2vw, 25px);
   background-color: var(--clr-bullets);
   border-radius: 50%;
 }
@@ -318,6 +343,14 @@ footer .counterdown-container {
   border: 5px solid var(--clr-blue);
   -webkit-transition: 500ms all ease-in-out;
   transition: 500ms all ease-in-out;
+}
+@media (max-width: 500px) {
+  footer .counterdown-container {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+    font-size: 10px;
+  }
 }
 footer .counterdown-container.animate {
   -webkit-animation: counterDownAnimate 500ms ease-in-out forwards;
@@ -346,8 +379,8 @@ footer .counterdown-container .counterdown {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 45px;
-  height: 45px;
+  width: 90%;
+  height: 90%;
   border-radius: inherit;
   font-weight: bold;
 }
