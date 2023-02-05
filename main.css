@@ -35,6 +35,11 @@ body {
   place-items: center;
 }
 
+@media (max-width: 500px) {
+  body {
+    padding: 0;
+  }
+}
 @media (max-width: 350px) {
   body {
     width: 350px;
@@ -52,6 +57,8 @@ body {
 @media (max-width: 500px) {
   .app-quiz {
     height: 100%;
+    width: 100%;
+    border-radius: 0;
   }
 }
 
@@ -245,6 +252,9 @@ header .category strong img {
   display: block;
   position: relative;
 }
+.quiz-area label span:focus {
+  outline-color: var(--clr-blue);
+}
 .quiz-area label span::before {
   content: "";
   position: absolute;
@@ -392,6 +402,11 @@ footer .counterdown-container .counterdown {
   margin-top: 1.5em;
   height: 455.4px;
   text-align: center;
+}
+@media (max-width: 500px) {
+  .results {
+    height: 90%;
+  }
 }
 .results .button-reload {
   background-color: transparent;

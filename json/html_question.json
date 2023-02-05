@@ -24,12 +24,12 @@
         "right_answer": "All Answers Is Right"
     },
     {
-        "title": "What Is The Right Hierarchy For Creating Part Of Page",
-        "answer_1": "<h2> Then <p> Then <h1> Then <p> Then <h3> Then <p> Then <img>",
-        "answer_2": "<h1> Then <p> Then <h3> Then <p> Then <h2> Then <p> Then <img>",
-        "answer_3": "<h2> Then <p> Then <h3> Then <p> Then <h1> Then <p> Then <img>",
-        "answer_4": "All Solutions Is Wrong",
-        "right_answer": "All Solutions Is Wrong"
+        "title": "What Is The Tag To Make Font Bolder",
+        "answer_1": "<strong> Tag",
+        "answer_2": "<b> Tag",
+        "answer_3": "<hr> Tag",
+        "answer_4": "<h4> Tag",
+        "right_answer": "<b> Tag"
     },
     {
         "title": "How Can We Include External Page Inside Our HTML Page",

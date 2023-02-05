@@ -19,8 +19,8 @@ buttonStart.addEventListener("click", () => {
     counterDown(20);
 });
 
-// test
 // startQuizContainer.style.display = "none"
+
 // select category default value
 category.innerHTML = `${selectCategory.value} <img src='./assets/icons/html.svg'>`
 selectCategory.addEventListener("change", () => {
@@ -29,19 +29,20 @@ selectCategory.addEventListener("change", () => {
     // switch questions category
     if (selectCategory.value == "CSS") {
         jsonFiles = './json/css_question.json';
-        category.innerHTML = `${selectCategory.value} <img src='./assets/icons/css.svg'>`
+        category.innerHTML = `${selectCategory.value} <img src='./assets/icons/css.svg'>`;
     } else if (selectCategory.value == "JS") {
         jsonFiles = './json/js_question.json';
-        category.innerHTML = `${selectCategory.value} <img src='./assets/icons/js.svg'>`
+        category.innerHTML = `${selectCategory.value} <img src='./assets/icons/js.svg'>`;
     } else {
         jsonFiles = './json/html_question.json';
-        category.innerHTML = `${selectCategory.value} <img src='./assets/icons/html.svg'>`
+        category.innerHTML = `${selectCategory.value} <img src='./assets/icons/html.svg'>`;
     }
 
     quizQuestion.innerHTML = "";
     answersArea.innerHTML = "";
 
     getDataFromJson(jsonFiles);
+    handleMediaQuery(mediaQuery);
 });
 
 function getDataFromJson(link) {
@@ -82,6 +83,10 @@ function getDataFromJson(link) {
                 counterDown(20);
 
                 counterdowncontainer.style.borderColor = "var(--clr-blue)";
+
+                if (currentIndex == ObjCount) {
+                    clearInterval(counterDownIntervale);
+                }
             }
         }
     }
@@ -113,7 +118,11 @@ function loopFromDumyData(obj, count) {
             // create label element
             let label = document.createElement("label");
             label.htmlFor = inputRadio.id;
-            label.innerHTML = '<span></span>';
+            label.innerHTML = `<span tabindex="${i}"></span>`;
+
+            label.children[0].onkeyup = () => {
+                inputRadio.checked = true
+            }
 
             // create strong element
             let strong = document.createElement("strong");
@@ -216,7 +225,6 @@ function showResults(count) {
     }
 };
 
-// let duration = 20;
 function counterDown(duration) {
     let counterdown = counterdowncontainer.children[0]
     let minuts = null;
@@ -272,10 +280,9 @@ buttonDownload.addEventListener("click", () => {
 const mediaQuery = window.matchMedia("(max-width:500px)");
 
 function handleMediaQuery(e) {
-    const test = e.matches;
-    console.log(test);
+    const maxWidth = e.matches;
 
-    if (test === true) {
+    if (maxWidth === true) {
         category.firstChild.textContent = "";
     } else {
         category.firstChild.textContent = "HTML";

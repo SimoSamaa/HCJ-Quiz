@@ -12,6 +12,8 @@
 
     @include breakPoint(mobile) {
         height: 100%;
+        width: 100%;
+        border-radius: 0;
     }
 }
 
@@ -167,6 +169,10 @@ header {
             display: block;
             position: relative;
 
+            &:focus {
+                outline-color: var(--clr-blue);
+            }
+
             &::before {
                 content: "";
                 position: absolute;
@@ -274,6 +280,10 @@ footer {
     margin-top: 1.5em;
     height: 455.4px;
     text-align: center;
+
+    @include breakPoint(mobile) {
+        height: 90%;
+    }
 
     .button-reload {
         @include buttonCustom();
