@@ -272,8 +272,8 @@ function counterDown(duration) {
 
 buttonDownload.addEventListener("click", () => {
     let downloadLink = document.createElement("a");
-    downloadLink.href = './assets/logo/logo.png';
-    downloadLink.download = 'HCJ-Quiz';
+    downloadLink.href = './app/app.rar';
+    downloadLink.download = 'app.rar';
     downloadLink.click();
 });
 
